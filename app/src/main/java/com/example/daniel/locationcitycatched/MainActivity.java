@@ -39,6 +39,8 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
     private LocationRequest locationRequest;
     private boolean inside = false;
     private boolean outside = false;
+    private TextView tvNearBuilding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +50,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
 
         tvLocalizacion = (TextView) findViewById(R.id.tv_localizacion);
         tvRango = (TextView) findViewById(R.id.tv_rango);
+        tvNearBuilding = (TextView) findViewById(R.id.tv_near_building);
 
         getLocationFirebase();
 
@@ -146,6 +149,8 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
                                 lastLocation.getLongitude() < longitude + 0.0025 && lastLocation.getLongitude() > longitude - 0.0025) {
                             Building build = new Building(descripcion, name, latitude, longitude);
                             nearBuilding.add(build);
+
+                            tvNearBuilding.setText(nearBuilding.toString());
                         }
                         tvRango.setText("Estas en el rango");
                     }
