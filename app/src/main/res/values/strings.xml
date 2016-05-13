@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">LocationCityCatched</string>
+    <string name="localizacion">Localizacion</string>
+    <string name="estas_en_el_rango">Estas en el rango</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
